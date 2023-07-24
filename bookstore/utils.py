@@ -9,6 +9,7 @@ def cache_all_books():
     all_books = Book.objects.all().select_related('author').values(
         'id',
         'name',
+        'author_id',
         'author__first_name',
         'author__last_name',
     )
